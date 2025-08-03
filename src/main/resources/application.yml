@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: code-pulse-api
+  datasource:
+    url: jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT}/postgres
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database: postgresql
+
