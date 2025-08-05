@@ -4,6 +4,8 @@ import com.zaxxer.hikari.util.Credentials;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -20,5 +22,9 @@ public class UserService {
         userEntity.setGithubAccessToken(createUserDTO.getGithubAccessToken());
 
         return userRepository.save(userEntity);
+    }
+
+    public Optional<UserEntity> getUser(long userId){
+        return userRepository.findById(userId);
     }
 }
